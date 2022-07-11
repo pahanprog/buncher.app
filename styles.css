@@ -74,7 +74,20 @@ li {
     body {
         padding: 30px;
     }
+    header {
+        font-family: 'Atma';
+        line-height: 40px;
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
     h1 {
         width: auto;
+        font-family: 'Atma';
+    font-size: 30px;
+    line-height: 34px;
+    }
+    li {
+        font-size: 14px;
+        line-height: 14px;
     }
 }
