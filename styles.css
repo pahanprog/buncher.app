@@ -3,6 +3,11 @@
     padding: 0;
     margin: 0;
 }
+
+html {
+    background: linear-gradient(-160deg, #100c3b 4%, #254ea2 90%);
+}
+
 body {
     /* background: linear-gradient(-160deg, #100c3b 4%, #254ea2 90%); */
     background: url(background.png);
