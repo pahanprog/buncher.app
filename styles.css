@@ -1,102 +1,193 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    background: linear-gradient(-160deg, #100c3b 4%, #254ea2 90%);
+  /* background: linear-gradient(-160deg, #100c3b 4%, #254ea2 90%); */
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  min-width: 3000px;
+  min-height: 1800px;
+  background: url(background.png);
+  background-position: center;
+  background-size: cover;
+  transform: translateY(100px);
 }
 
 body {
-    /* background: linear-gradient(-160deg, #100c3b 4%, #254ea2 90%); */
-    background: url(background.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-place-items: center;
-    overflow: hidden;
+  /* background: linear-gradient(-160deg, #100c3b 4%, #254ea2 90%); */
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
 header {
-    font-family: 'Atma';
-    color: #FFFFFF;
-    font-weight: 600;
-    line-height: 60px;
-    font-size: 60px;
-    margin-bottom: 50px;
+  font-family: "Atma";
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 50px;
+  font-size: 45px;
+  margin-bottom: 20px;
 }
 
 h1 {
-    font-family: 'Atma';
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 40px;
-    width: 495px;
-    line-height: 44px;
+  font-family: "Atma";
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 35px;
+  width: 390px;
+  line-height: 40px;
 }
 
 .stores_container {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
 
+.stores_container svg {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.burger {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    display: none;
+}
+
+.burger div {
+    width: 30px;
+    height: 2px;
+    margin-bottom: 7px;
+    background-color: #ffffff;
+}
+
+.burger div:last-child {
+    margin-bottom: 0px;
 }
 
 ul {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
 }
 
 li {
-    font-family: 'Atma';
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 18px;
-    cursor: pointer;
+  font-family: "Atma";
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
 }
 
+.content_outer {
+  width: 1170px;
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+}
 
+.content_inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 75px 0 30px 0;
+}
 
-.content {
+@media only screen and (max-width: 1920px) {
+  .content_outer {
     width: 960px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 60px 0;
+  }
 }
 
-@media only screen and (max-width: 960px) {
-    .content {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 40px 30px;
-    }
+@media only screen and (max-width: 1024px) {
+  .content_outer {
+    width: 100%;
+  }
+  .content_inner {
+    padding: 75px 60px 30px 60px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    header {
-        font-family: 'Atma';
-        line-height: 40px;
-        font-size: 40px;
-        margin-bottom: 30px;
-    }
+  header {
+    line-height: 40px;
+    font-size: 40px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    width: 335px;
+    font-family: "Atma";
+    font-size: 30px;
+    line-height: 35px;
+  }
+  ul {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+    
+.mobile-menu {
+    z-index: 1;
+    display: none;
+}
+
+@media only screen and (max-width: 580px) {
+    .content_inner {
+        padding: 75px 30px 30px 30px;
+      }
     h1 {
         width: auto;
-        font-family: 'Atma';
-    font-size: 30px;
-    line-height: 34px;
+        font-family: "Atma";
+        font-size: 30px;
+        line-height: 35px;
+      }
+    ul {
+      display: none;
     }
-    li {
-        font-size: 14px;
-        line-height: 14px;
+    .burger {
+        display: block;
     }
-}
+
+    .mobile-menu.open {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 16px;
+    line-height: 16px;
+    }
+    .mobile-menu ul li {
+        padding: 10px 30px; 
+    }
+    .stores_container.closed {
+        display: none;
+    }
+    .content_inner.closed {
+        display: none;
+      }
+  }
+  
